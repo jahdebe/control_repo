@@ -8,15 +8,12 @@ node 'master.puppet.vm' {
     ensure => file,
     content => "Welcome to ${fqdn}\n",  
   }
-  exec 
 }
 
 node /^web/ {
   include role::app_server
-  include role::ssh_server
 }
 
 node /^db/ {
   include role::db_server
-  include role::ssh_server
 }
