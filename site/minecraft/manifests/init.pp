@@ -26,6 +26,6 @@ class minecraft (
   service { 'minecraft':
     ensure => running,
     enable => true,
-    require => [Package['java'], File["${install_dir}/server.jar"],File[/etc/systemd/system/minecraft.service]]
+    require => [Package['java'], File["${install_dir}/server.jar"],File['/etc/systemd/system/minecraft.service']]
   }
 }
